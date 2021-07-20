@@ -38,8 +38,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  let newArr = arr.map((word) => word + '?');
-  return newArr;
+  return arr.map((word) => word + '?');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +73,7 @@ const forEachTwoToThe = (arr) => {
   arr.forEach((value)=> {
     let newValue = Math.pow(2, value);
     newArr.push(newValue);
-  })
+  });
   return newArr;
 };
 
@@ -86,6 +85,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  //Don't Write Like this look at number 2 that is a more efficient way to do this
   let newArr = arr.map((value) => Math.pow(2, value));
   return newArr;
 };
