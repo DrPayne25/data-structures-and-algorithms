@@ -23,7 +23,11 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => arr.filter(item => typeof(item) === 'number');
+const typeNum2 = (arr) => arr.filter(item => typeof item === 'number');
+
+const typeNum = (arr) => {
+  arr.filter(item => typeof(item) === 'number')
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3 All Challenges from here on out were worked on by myself Yirim and Connor 
