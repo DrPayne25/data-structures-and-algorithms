@@ -21,14 +21,17 @@ function lower(str) {
   return str.toLowerCase();
 }
 
-const updateAnimal = (arr, callback) => {
-  // Solution code here...
-  let newArr = [];
-  arr.forEach(value => {
-    newArr.push(callback(value));
-  });
-  return newArr;
-};
+const updateAnimal = (arr, callback) => arr.map(str => callback(str));
+// {
+//   // Solution code here...
+//   let newArr = [];
+//   arr.forEach(value => {
+//     newArr.push(callback(value));
+//   });
+//   return newArr;
+// };
+
+// arr.map(str => callback(str));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -50,6 +53,9 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
+  arr.sort((a,b)=> {
+    return b - a;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
