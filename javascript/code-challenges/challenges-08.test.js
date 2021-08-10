@@ -121,7 +121,7 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
+const isCapitalized = (str) => {
   // Solution code here...
 let re = /^[A-Z]\w*/;
 let results = str.match(match(matches));
