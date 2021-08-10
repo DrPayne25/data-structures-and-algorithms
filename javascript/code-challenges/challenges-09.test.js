@@ -32,15 +32,17 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  // Solution code here...
-  let myObject = Object.values(obj);
-  if(myObject.includes(value)) {
-    return true;
-  } else if (!myObject.includes(value)) {
-    return false;
-  }
-};
+// const checkValues = (obj, value) => {
+//   // Solution code here...
+//   let myObject = Object.values(obj);
+//   if(myObject.includes(value)) {
+//     return true;
+//   } else if (!myObject.includes(value)) {
+//     return false;
+//   }
+// };
+
+const checkValues = (obj, value) => Object.values(obj).includes(value);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,16 +63,17 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-  let myKeys = Object.keys(obj);
-  let myValues = Object.values(obj);
-  let newArr = [];
-  for (let i = 0; i < myKeys.length; i++) {
-    newArr.push(`${myKeys[i]}: ${myValues[i]}`);
-  }
-  return newArr;
-};
+const updateNumbers = (obj) => Object.entries(obj).map(nums => nums.join(': '));
+// {
+//   // Solution code here...
+//   let myKeys = Object.keys(obj);
+//   let myValues = Object.values(obj);
+//   let newArr = [];
+//   for (let i = 0; i < myKeys.length; i++) {
+//     newArr.push(`${myKeys[i]}: ${myValues[i]}`);
+//   }
+//   return newArr;
+// };
 
 
 
@@ -123,13 +126,14 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  // Solution code here...
-  let myValues = Object.values(arr);
-  return myValues.map(value => {
-    return value.house;
-  });
-};
+const getHouses = (arr) => Object.values(arr).map(value => value.house);
+// {
+//   // Solution code here...
+//   let myValues = Object.values(arr);
+//   return myValues.map(value => {
+//     return value.house;
+//   });
+// };
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -144,8 +148,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-  let my 
+  for (let obj of arr) {
+    if (Object.values(obj).includes(character)) {
+      return obj.children && obj.children.length;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,6 +166,7 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
