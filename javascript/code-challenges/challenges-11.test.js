@@ -20,6 +20,10 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+  let keys = Object.keys(obj);
+  return keys.map(keyName => {
+    return `<li>${keyName}: ${obj[keyName]}</li>`;
+  });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +41,7 @@ const count = (target, input) => {
   let startingNum = 0;
   input.map(arr => {
     arr.map(num => {
-      if (num === target || num === []){
+      if (num === target){
         startingNum ++;
       }
     });
@@ -78,17 +82,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  input.map(arr => {
-    arr.filter(num => {
-      if(num === Number && num % 5 === 0){
-        let newNum = num;
-        return Math.pow(newNum, 2);
-      } else {
-        return [];
-      }
-    });
+  let newNum = input.map((arr)=> {
+    return arr.filter((num) => typeof num === 'number' && num % 5 === 0).map(filteredNum => Math.pow(2, filteredNum));
   });
+  return newNum;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -154,12 +153,14 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  return data.map(character => {
-    if(character.gender === 'male'|| character.gender ==='female'){
-      return character.name;
-    }
-  }).filter(arr => arr !== undefined).join(' and ');
+  return data.filter(character => character.gender === 'male' || character.gender === 'female').map(characters => characters.name).join(' and ');
 };
+
+// return data.map(character => {
+//   if(character.gender === 'male'|| character.gender ==='female'){
+//     return character.name;
+//   }
+// }).filter(arr => arr !== undefined).join(' and ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -168,7 +169,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((a,b) => Number(a.height) < Number(b.height) ? a : b).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
