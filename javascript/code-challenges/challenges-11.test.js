@@ -57,6 +57,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let sum = 0;
+  input.forEach(row => {
+    return row.forEach(col => sum += col);
+  });
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,6 +78,16 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  input.map(arr => {
+    arr.filter(num => {
+      if(num === Number && num % 5 === 0){
+        let newNum = num;
+        return Math.pow(newNum, 2);
+      } else {
+        return [];
+      }
+    });
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,6 +154,11 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  return data.map(character => {
+    if(character.gender === 'male'|| character.gender ==='female'){
+      return character.name;
+    }
+  }).filter(arr => arr !== undefined).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
