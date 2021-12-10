@@ -76,5 +76,6 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run in watch mode** - `ptw` or `pytest-watch`
 
 ## Table of Contents
-1. Code Challenge 01 [README](code_challenges/challenge_01_README.md)
-2.
+1. Code Challenge 01 [README](code_challenges/challenge_01/README.md)
+2. Code Challenge 02 [README](code_challenges/challenge_02/READEME.md)
+3. Code Challenge 03 [README]()
