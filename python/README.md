@@ -78,4 +78,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 ## Table of Contents
 1. Code Challenge 01 [README](code_challenges/challenge_01/README.md)
 2. Code Challenge 02 [README](code_challenges/challenge_02/READEME.md)
-3. Code Challenge 03 [README]()
+3. Code Challenge 03 [README](code_challenges/challenge_03/READEME.md)
