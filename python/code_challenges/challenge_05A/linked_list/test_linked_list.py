@@ -1,4 +1,4 @@
-from linked_list import LinkedList, Node
+from linked_list.py import Node, LinkedList
 import pytest
 
 def test_node_instance():
