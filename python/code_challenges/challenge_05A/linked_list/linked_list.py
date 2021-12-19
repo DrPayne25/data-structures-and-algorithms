@@ -8,24 +8,36 @@ class LinkedList:
         self.head = head
 
     def insert(self, value):
-        new_node = Node(value)
-        # if self.head is not None:
-        new_node.next = self.head
-        self.head = new_node
+        try:
+            new_node = Node(value)
+            # if self.head is not None:
+            new_node.next = self.head
+            self.head = new_node
+        except Exception as e:
+            print(f'The Follow error occurred {e}')
 
     def includes(self, value):
-        starting = self.head
-        while starting != None:
-            if starting.value == value:
-                return True
-            starting = starting.next
-        return False
+        try:
+            current = self.head
+            # think of the below statement as while I have a current value in head
+            while current:
+                if current.value == value:
+                    return True
+                current = current.next
+            return False
+        except Exception as e:
+            print(f'The Follow error occurred {e}')
 
     def to_string(self):
-        starting = self.head
-        str_result = ''
-        while starting != None:
-            str_result += self.head.value
-        starting = starting.next
+        try:
+            current = self.head
+            str_result = ''
+            while current:
+                str_result += f"{{ {current.value} }} -> "
+                current = current.next
+            return str_result + 'None'
+        except Exception as e:
+            print(f'The Follow error occurred {e}')
+
 
 
