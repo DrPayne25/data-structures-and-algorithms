@@ -51,7 +51,10 @@ class LinkedList:
         current.next = new_node
 
     def insert_before(self, next_node, new_value):
-        pass
+        new_node = Node(new_value)
+        node = self.head
+        if node.value == next_node
+        new_node.next = next_node
 
     def insert_after(self, previous_node, new_value):
         pass

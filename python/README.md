@@ -80,3 +80,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 2. Code Challenge 02 [README](code_challenges/challenge_02/READEME.md)
 3. Code Challenge 03 [README](code_challenges/challenge_03/READEME.md)
 4. Code Challenge 05 [README](code_challenges/challenge_05A/READEME.md)
+5. 4. Code Challenge 06 [README](code_challenges/challenge_05A/READEME.md)

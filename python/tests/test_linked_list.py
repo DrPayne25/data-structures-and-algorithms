@@ -104,8 +104,43 @@ def test_insert_before_middle():
     ll.insert('orange')
     ll.insert('banana')
     ll.insert('grape')
-    ll.insert_before(2,5)
-    assert ll.__str__() == 
+    ll.insert_before(2,"peach")
+    assert ll.__str__() == "{ grape } -> { peach } -> { banana } { orange } -> None"
+
+def test_insert_before_middle_not_working():
+    ll = LinkedList()
+    ll.insert('orange')
+    ll.insert('banana')
+    ll.insert('grape')
+    ll.insert_before(2,"peach")
+    assert ll.__str__() != "{ grape } -> { banana } -> { peach } { orange } -> None"
+
+def test_insert_before_start():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    ll.insert_before(1,"peach")
+    assert ll.__str__() == "{ peach } -> { grape } -> { banana } { orange } -> None"
+
+def test_insert_before_start_not_working():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    ll.insert_before(1,"peach")
+    assert ll.__str__() != "{ grape } -> { peach } -> { banana } { orange } -> None"
+
+# def test_insert_after_middle():
+#     ll = LinkedList()
+#     ll.append('orange')
+#     ll.append('banana')
+#     ll.append('grape')
+#     ll.insert_after(1,"peach")
+#     assert ll.__str__() == "{ grape } -> { peach } -> { banana } { orange } -> None"
+
+
+
 
 
 
