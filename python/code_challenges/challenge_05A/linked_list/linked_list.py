@@ -28,7 +28,7 @@ class LinkedList:
         except Exception as e:
             print(f'The Follow error occurred {e}')
 
-    def to_string(self):
+    def __str__(self):
         try:
             current = self.head
             str_result = ''
@@ -39,5 +39,48 @@ class LinkedList:
         except Exception as e:
             print(f'The Follow error occurred {e}')
 
+    def append(self, new_value):
+        new_node = Node(new_value)
+        current = self.head
+        if current is None:
+            self.head = new_node
+            return
+
+        while(current.next):
+            current = current.next
+        current.next = new_node
+
+    def insert_before(self, next_value, new_value):
+        if self.head.value == next_value:
+            new_node = Node(new_value)
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next != None:
+                if current.next.value == next_value:
+                    temp = current.next
+                    current.next = Node(new_value, temp)
+                    break
+                current = current.next
+
+    def insert_after(self, previous_node, new_value):
+        pass
+
+    def kth_from_end(self, k):
+        temp = self.head #temp variable for head
+        length = 0
+
+        while temp is not None:
+            temp = temp.next
+            length += 1
+
+        if k > length:
+            return('Exception')
+
+        temp = self.head
+        for _ in range(1, length - k):
+            temp = temp.next
+        return(temp.value)
 
 
