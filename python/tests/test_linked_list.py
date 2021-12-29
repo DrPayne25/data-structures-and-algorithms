@@ -142,6 +142,7 @@ def test_insert_after_middle():
     ll.insert_after(1,"peach")
     assert ll.__str__() == "{ grape } -> { peach } -> { banana } { orange } -> None"
 
+# @pytest.mark.skip('Pending')
 def test_kth_from_end_larger_than_list():
     ll = LinkedList()
     ll.append('orange')
@@ -149,6 +150,7 @@ def test_kth_from_end_larger_than_list():
     ll.append('grape')
     assert ll.kth_from_end(4) == 'Exception'
 
+# @pytest.mark.skip('Pending')
 def test_kth_from_end_same_size_list():
     ll = LinkedList()
     ll.append('orange')
@@ -156,19 +158,22 @@ def test_kth_from_end_same_size_list():
     ll.append('grape')
     assert ll.kth_from_end(2) == 'orange'
 
+@pytest.mark.skip('Pending')
 def test_kth_from_end_negative_integer():
     ll = LinkedList()
     ll.append('orange')
     ll.append('banana')
     ll.append('grape')
-    assert ll.kth_from_end(2) == 'Exception'
+    assert ll.kth_from_end(-2) == 'Exception'
 
+# @pytest.mark.skip('Pending')
 def test_kth_from_end_one():
     ll = LinkedList()
     ll.append('orange')
     assert ll.kth_from_end(0) == 'orange'
 
-def test_kth_from_end_negative_integer():
+# @pytest.mark.skip('Pending')
+def test_kth_from_end():
     ll = LinkedList()
     ll.append('orange')
     ll.append('banana')

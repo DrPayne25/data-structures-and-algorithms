@@ -72,15 +72,14 @@ class LinkedList:
         length = 0
 
         while temp is not None:
-            temp = self.head
+            temp = temp.next
             length += 1
 
         if k > length:
-            return
+            return('Exception')
 
         temp = self.head
-
-        for _ in range(0, length - k):
+        for _ in range(1, length - k):
             temp = temp.next
         return(temp.value)
 
