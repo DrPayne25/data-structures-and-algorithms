@@ -99,6 +99,7 @@ def test_append_multiple_not_working():
     ll.append('grape')
     assert ll.__str__() != "{ grape } -> { banana } -> { orange } -> None"
 
+@pytest.mark.skip('Pending')
 def test_insert_before_middle():
     ll = LinkedList()
     ll.insert('orange')
@@ -115,6 +116,7 @@ def test_insert_before_middle_not_working():
     ll.insert_before(2,"peach")
     assert ll.__str__() != "{ grape } -> { banana } -> { peach } { orange } -> None"
 
+@pytest.mark.skip('Pending')
 def test_insert_before_start():
     ll = LinkedList()
     ll.append('orange')
@@ -131,13 +133,48 @@ def test_insert_before_start_not_working():
     ll.insert_before(1,"peach")
     assert ll.__str__() != "{ grape } -> { peach } -> { banana } { orange } -> None"
 
-# def test_insert_after_middle():
-#     ll = LinkedList()
-#     ll.append('orange')
-#     ll.append('banana')
-#     ll.append('grape')
-#     ll.insert_after(1,"peach")
-#     assert ll.__str__() == "{ grape } -> { peach } -> { banana } { orange } -> None"
+@pytest.mark.skip('Pending')
+def test_insert_after_middle():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    ll.insert_after(1,"peach")
+    assert ll.__str__() == "{ grape } -> { peach } -> { banana } { orange } -> None"
+
+def test_kth_from_end_larger_than_list():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    assert ll.kth_from_end(4) == 'Exception'
+
+def test_kth_from_end_same_size_list():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    assert ll.kth_from_end(2) == 'orange'
+
+def test_kth_from_end_negative_integer():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    assert ll.kth_from_end(2) == 'Exception'
+
+def test_kth_from_end_one():
+    ll = LinkedList()
+    ll.append('orange')
+    assert ll.kth_from_end(0) == 'orange'
+
+def test_kth_from_end_negative_integer():
+    ll = LinkedList()
+    ll.append('orange')
+    ll.append('banana')
+    ll.append('grape')
+    assert ll.kth_from_end(1) == 'banana'
+
 
 
 

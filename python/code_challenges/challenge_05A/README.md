@@ -29,5 +29,6 @@ insert after will take an existing node and then insert a new node after it.
 ## Whiteboards
 Challenge 05: below one!
 Challenge 06: ![challenge-06-WhiteBoard](code_challenges/Whiteboards/white_board_linked_list_insertions.jpg)
+Challenge 06: ![challenge-07-WhiteBoard](../Whiteboards/linked_list_kth.png)
 
 
