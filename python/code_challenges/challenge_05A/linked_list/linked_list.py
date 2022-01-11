@@ -85,19 +85,29 @@ class LinkedList:
 
     def zip_lists(self, ll1, ll2):
 #Set current for each ll to it's head
-        current_ll1 = ll1.head
-        current_ll2 = ll2.head
-#loop through each linked list as long as neither has a value of None
-        while current_ll1 != None and current_ll2 != None:
-#Save the current next values of each list
-            next_ll1 = current_ll1.next
-            next_ll2 = current_ll2.next
-#swap the ll2 next to the next of next f ll1 while setting the next of ll1 to the current value of ll2
-            current_ll2.next = next_ll1
-            current_ll1.next = current_ll2
-# Adjust current for the next loop
-            current_ll1 = next_ll1
-            current_ll2 = next_ll2
-            ll2.head = current_ll2
+        current1 = ll1.head
+        current2 = ll2.head
+        ll3 = LinkedList()
+        #loop through both linked lists to as long as they have a value
+        while current1 or current2:
+            if current1:
+                ll3.append(current1.value)
+                current1 = current1.next
+            if current2:
+                ll3.append(current2.value)
+                current2 = current2.next
+            return ll3
+# #loop through each linked list as long as neither has a value of None
+#         while current_ll1 != None and current_ll2 != None:
+# #Save the current next values of each list
+#             next_ll1 = current_ll1.next
+#             next_ll2 = current_ll2.next
+# #swap the ll2 next to the next of next f ll1 while setting the next of ll1 to the current value of ll2
+#             current_ll2.next = next_ll1
+#             current_ll1.next = current_ll2
+# # Adjust current for the next loop
+#             current_ll1 = next_ll1
+#             current_ll2 = next_ll2
+#             ll2.head = current_ll2
 
 
