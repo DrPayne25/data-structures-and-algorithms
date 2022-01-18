@@ -17,6 +17,14 @@ class Queue:
         else:
             self.rear.next = node
             self.rear = node
+    # different way to do enqueue
+    # def enqueue(self, value):
+    #     node = Node(value)
+    #     if self.rear:
+    #         self.rear.next = node
+    #     self.rear = node
+    #     self.front = self.front or self.rear
+
 
     def dequeue(self):
         if self.front == None:
@@ -31,9 +39,3 @@ class Queue:
             raise Exception('Trying to peek from an empty queue')
         return self.front.value
 
-    # def enqueue(self, value):
-    #     node = Node(value)
-    #     if self.rear:
-    #         self.rear.next = node
-    #     self.rear = node
-    #     self.front = self.front or self.rear

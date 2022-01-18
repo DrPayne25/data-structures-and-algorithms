@@ -2,6 +2,7 @@ from code_challenges.stack_and_queue import queues
 from code_challenges.stack_and_queue.node import Node
 from code_challenges.stack_and_queue.queues import Queue
 from code_challenges.stack_and_queue.stack import Stack
+from code_challenges.stack_and_queue.stack import Pseudo_queue
 
 import pytest
 
@@ -249,3 +250,56 @@ def test_dequeue_exception_queue():
     with pytest.raises(Exception):
         queue = Queue()
         queue.dequeue()
+
+#Test 15 Pseudo Queue Enqueue
+def test_pseudo_queue_enqueue():
+    queue = Pseudo_queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    actual = len(queue.stack_one)
+    expected = (3)
+    assert actual == expected
+
+def test_pseudo_queue_enqueue_not_working():
+    queue = Pseudo_queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    actual = len(queue.stack_one)
+    expected = (2)
+    assert actual != expected
+
+#Test 16 Pseudo Queue Dequeue
+
+def test_pseudo_queue_dequeue_once():
+    queue = Pseudo_queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    actual = queue.dequeue()
+    expected = (1)
+    assert actual == expected
+
+def test_pseudo_queue_dequeue_multiple():
+    queue = Pseudo_queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.dequeue()
+    actual = queue.dequeue()
+    expected = (2)
+    assert actual == expected
+
+def test_pseudo_queue_dequeue_multiple_not_working():
+    queue = Pseudo_queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.dequeue()
+    actual = queue.dequeue()
+    expected = (1)
+    assert actual != expected
+
+
+
