@@ -2,7 +2,7 @@ from code_challenges.stack_and_queue import queues
 from code_challenges.stack_and_queue.node import Node
 from code_challenges.stack_and_queue.queues import Queue
 from code_challenges.stack_and_queue.stack import Stack
-from code_challenges.stack_and_queue.stack import Pseudo_queue
+from code_challenges.stack_and_queue.stack_queue_pseudo import Pseudo_queue
 
 import pytest
 
@@ -257,7 +257,7 @@ def test_pseudo_queue_enqueue():
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    actual = len(queue.stack_one)
+    actual = queue.stack_one.size
     expected = (3)
     assert actual == expected
 
@@ -266,7 +266,7 @@ def test_pseudo_queue_enqueue_not_working():
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    actual = len(queue.stack_one)
+    actual = queue.stack_one.size
     expected = (2)
     assert actual != expected
 
