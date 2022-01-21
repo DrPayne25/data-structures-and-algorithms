@@ -3,6 +3,7 @@ from code_challenges.stack_and_queue.node import Node
 from code_challenges.stack_and_queue.queues import Queue
 from code_challenges.stack_and_queue.stack import Stack
 from code_challenges.stack_and_queue.stack_queue_pseudo import Pseudo_queue
+from  code_challenges.stack_and_queue.stack_queue_animal_shelter import AnimalShelter
 
 import pytest
 
@@ -300,6 +301,49 @@ def test_pseudo_queue_dequeue_multiple_not_working():
     actual = queue.dequeue()
     expected = (1)
     assert actual != expected
+
+def test_animal_shelter():
+    animal_shelter = AnimalShelter()
+    assert animal_shelter
+
+def test_animal_shelter_enqueue_cat():
+    animal_shelter = AnimalShelter()
+    animal_shelter.enqueue('cat')
+    actual = animal_shelter.in_stack.peek()
+    expected = 'cat'
+    assert actual == expected
+
+def test_animal_shelter_enqueue_dog():
+    animal_shelter = AnimalShelter()
+    animal_shelter.enqueue('dog')
+    actual = animal_shelter.in_stack.peek()
+    expected = 'dog'
+    assert actual == expected
+
+def test_animal_shelter_enqueue_multiple():
+    animal_shelter = AnimalShelter()
+    animal_shelter.enqueue('dog')
+    animal_shelter.enqueue('cat')
+    actual = animal_shelter.in_stack.peek()
+    expected = 'dog'
+    assert actual == expected
+
+def test_animal_shelter_enqueue_return_none():
+    animal_shelter = AnimalShelter()
+    animal_shelter.enqueue('dog')
+    actual = animal_shelter.in_stack.peek()
+    expected = 'cat'
+    assert actual != expected
+    
+@pytest.mark.skip('Pending')
+def test_animal_shelter_dequeue():
+    animal_shelter = AnimalShelter()
+    animal_shelter.enqueue('dog')
+    animal_shelter.enqueue('cat')
+    animal_shelter.enqueue('cat')
+    actual = animal_shelter.dequeue('cat')
+    expected = 'cat'
+    assert actual == expected
 
 
 
