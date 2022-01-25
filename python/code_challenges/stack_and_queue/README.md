@@ -95,3 +95,31 @@ the same applies to if the argument is dog
 
 Credit:
 Brandon, Eddie, Connor, Roger, [GeekForGeeks](https://www.geeksforgeeks.org/queue-using-stacks/)
+
+# Stack Queue Bracket
+<!-- Short summary or background information -->
+Problem Domain: Write a function called validate brackets that will take in a string and return a boolean based on if all the brackets within are balanced
+
+## Challenge
+<!-- Description of the challenge -->
+Create a method that will do the above
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+Big O
+Space: O(n)
+Time: O(n)
+
+## API
+<!-- Description of each method publicly available to your Stack and Queue-->
+
+validate
+
+enqueue: takes one argument that if not equal to dog or cat will return none it will then push that animal into the top of stack one while giving the out stack the new value if needed
+
+dequeue: will take one argument and if that argument is not equal to dog or cat return none if the argument is cat and the top value equals cat op that current top
+the same applies to if the argument is dog
+
+
+Credit:
+Brandon, Eddie, Connor, Roger, [GeekForGeeks](https://www.geeksforgeeks.org/queue-using-stacks/)

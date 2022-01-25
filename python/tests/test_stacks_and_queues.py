@@ -346,4 +346,33 @@ def test_animal_shelter_dequeue():
     assert actual == expected
 
 
+def test_matching_working():
+    string = '{}'
+    actual = validateBrackets(string)
+    expected = True
+    assert actual == expected
+
+def test_matching_working2():
+    string = '[{abc}]'
+    actual = validateBrackets(string)
+    expected = True
+    assert actual == expected
+
+def test_matching_working3():
+    string = '(acb[{bb}])'
+    actual = validateBrackets(string)
+    expected = True
+    assert actual == expected
+
+def test_matching_working4():
+    string = '()'
+    actual = validateBrackets(string)
+    expected = True
+    assert actual == expected
+
+def test_matching_not_working():
+    string = '([)'
+    actual = validateBrackets(string)
+    expected = False
+    assert actual == expected
 
