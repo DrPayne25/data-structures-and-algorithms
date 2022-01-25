@@ -113,13 +113,10 @@ Time: O(n)
 ## API
 <!-- Description of each method publicly available to your Stack and Queue-->
 
-validate
+validateBrackets
 
-enqueue: takes one argument that if not equal to dog or cat will return none it will then push that animal into the top of stack one while giving the out stack the new value if needed
-
-dequeue: will take one argument and if that argument is not equal to dog or cat return none if the argument is cat and the top value equals cat op that current top
-the same applies to if the argument is dog
+will take in a string and see if the brackets match each other. Then return a boolean of true if they do and false if they don't 
 
 
 Credit:
-Brandon, Eddie, Connor, Roger, [GeekForGeeks](https://www.geeksforgeeks.org/queue-using-stacks/)
+Brandon, Eddie, Connor, Roger
