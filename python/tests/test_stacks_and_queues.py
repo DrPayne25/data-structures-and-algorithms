@@ -4,7 +4,6 @@ from code_challenges.stack_and_queue.queues import Queue
 from code_challenges.stack_and_queue.stack import Stack
 from code_challenges.stack_and_queue.stack_queue_pseudo import Pseudo_queue
 from  code_challenges.stack_and_queue.stack_queue_animal_shelter import AnimalShelter
-from  code_challenges.stack_and_queue.stack_queue_bracket import validateBrackets
 
 import pytest
 
@@ -335,7 +334,7 @@ def test_animal_shelter_enqueue_return_none():
     actual = animal_shelter.in_stack.peek()
     expected = 'cat'
     assert actual != expected
-
+    
 @pytest.mark.skip('Pending')
 def test_animal_shelter_dequeue():
     animal_shelter = AnimalShelter()
@@ -345,6 +344,7 @@ def test_animal_shelter_dequeue():
     actual = animal_shelter.dequeue('cat')
     expected = 'cat'
     assert actual == expected
+
 
 def test_matching_working():
     string = '{}'
@@ -375,6 +375,4 @@ def test_matching_not_working():
     actual = validateBrackets(string)
     expected = False
     assert actual == expected
-
-
 
