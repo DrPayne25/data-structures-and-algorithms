@@ -103,6 +103,7 @@ Problem Domain: Write a function called validate brackets that will take in a st
 ## Challenge
 <!-- Description of the challenge -->
 Create a method that will do the above
+![WhiteBoard](code_challenges/Whiteboards/cc_13.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
@@ -115,7 +116,7 @@ Time: O(n)
 
 validateBrackets
 
-will take in a string and see if the brackets match each other. Then return a boolean of true if they do and false if they don't 
+will take in a string and see if the brackets match each other. Then return a boolean of true if they do and false if they don't
 
 
 Credit:
