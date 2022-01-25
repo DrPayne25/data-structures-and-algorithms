@@ -370,5 +370,11 @@ def test_matching_working4():
     expected = True
     assert actual == expected
 
+def test_matching_not_working():
+    string = '([)'
+    actual = validateBrackets(string)
+    expected = False
+    assert actual == expected
+
 
 
