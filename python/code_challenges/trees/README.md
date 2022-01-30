@@ -28,3 +28,6 @@ def post_order: will walk through a binary tree and return the values in the ord
 def add: still working
 
 def contains: still working
+
+# Credits:
+Brandon, Eddie, Connor, Isaiah, Michael, Roger, GeekForGeeks
