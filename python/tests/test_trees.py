@@ -1,6 +1,8 @@
 from code_challenges.trees.node import Node
 from code_challenges.trees.binary_tree import BinaryTree, BinarySearchTree
 
+import pytest
+
 def test_new_node():
     node = Node(11)
     actual = node.value
@@ -137,6 +139,37 @@ def test_bt_search_tree_empty_false():
     actual = bt.contains('orange')
     expected = False
     assert actual == expected
+
+def test_bt_max_value():
+    one = Node(1)
+    three = Node(3)
+    four = Node(4)
+    bt = BinaryTree(one)
+    one.left = four
+    one.right = three
+
+    assert one.left == bt.root.left
+    assert one.right == three
+    max_value = bt.max_value()
+    assert max_value == 4
+
+def test_bt_max_value_not_working():
+    seven = Node(7)
+    nine = Node(9)
+    twenty = Node(20)
+    bt = BinaryTree(seven)
+    seven.left = twenty
+    seven.right = nine
+
+    assert seven.left == bt.root.left
+    assert seven.right == nine
+    max_value = bt.max_value()
+    assert max_value != 7
+
+def test_bt_max_value_exception():
+    with pytest.raises(Exception):
+        bt = BinaryTree()
+        bt.max_value()
 
 
 
