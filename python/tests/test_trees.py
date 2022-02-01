@@ -1,5 +1,5 @@
 from code_challenges.trees.node import Node
-from code_challenges.trees.binary_tree import BinaryTree
+from code_challenges.trees.binary_tree import BinaryTree, BinarySearchTree
 
 def test_new_node():
     node = Node(11)
@@ -94,6 +94,49 @@ def test_bt_post_order():
     assert pear.right == apple
     order_list = bt.post_order()
     assert order_list == ['orange', 'apple', 'pear']
+
+def test_bt_search_tree_left():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    actual = bt.pre_order()
+    expected = ['orange', 'apple']
+    assert actual == expected
+
+def test_bt_search_tree_left_and_right():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    bt.add('pear')
+    actual = bt.pre_order()
+    expected = ['orange', 'apple', 'pear']
+    assert actual == expected
+
+def test_bt_search_tree_contains_true():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    bt.add('pear')
+    bt.add('banana')
+    actual = bt.contains('pear')
+    expected = True
+    assert actual == expected
+
+def test_bt_search_tree_contains_false():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    bt.add('pear')
+    bt.add('orange')
+    actual = bt.contains('strawberry')
+    expected = False
+    assert actual == expected
+
+def test_bt_search_tree_empty_false():
+    bt = BinarySearchTree()
+    actual = bt.contains('orange')
+    expected = False
+    assert actual == expected
 
 
 

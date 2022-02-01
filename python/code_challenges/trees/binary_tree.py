@@ -48,7 +48,7 @@ class BinaryTree:
         walk(self.root)
         return values
 
-class BinarySearchTree:
+class BinarySearchTree(BinaryTree):
 
     def add(self, value):
         def walk(root):
@@ -64,6 +64,14 @@ class BinarySearchTree:
                     walk(root.right)
         walk(self.root)
 
-    def contains(self):
-        pass
-
+    def contains(self, value):
+        def walk(root):
+            if root is None:
+                return False
+            elif root.value == value:
+                return True
+            elif value < root.value:
+                return walk(root.left)
+            else:
+                return walk(root.right)
+        return walk(self.root)

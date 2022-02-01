@@ -24,10 +24,11 @@ def in_order: will walk through a binary tree and return the values in the order
 def post_order: will walk through a binary tree and return the values in the order of left > right > root by walking through the root.left then the root.right then appending the values
 
 ## BinarySearchTree
+All Method will require a binarytree to be input
 
-def add: still working
+def add: takes a value then it will set a base case for if the the value is less than the current root.value which is if root.left is currently none then set the root.left to the new node with the current value. Else you will walk the root.left Same thing will be done on the else statement for the right side
 
-def contains: still working
+def contains: will take in a value then will walk through the root then if root is none return false to say the value isn't there then check if the root.value is equal to the value if so return true indicating it is there otherwise check if the value is less than the root if so you will the walk of the root.left last we will check for any other condition which would be greater than and use that to return the walk on the right side. 
 
 # Credits:
 Brandon, Eddie, Connor, Isaiah, Michael, Roger, GeekForGeeks
