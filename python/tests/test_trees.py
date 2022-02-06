@@ -1,5 +1,6 @@
 from code_challenges.trees.node import Node
 from code_challenges.trees.binary_tree import BinaryTree, BinarySearchTree
+from code_challenges.trees.tree_breadth_first import breadth_first
 
 import pytest
 
@@ -170,6 +171,20 @@ def test_bt_max_value_exception():
     with pytest.raises(Exception):
         bt = BinaryTree()
         bt.max_value()
+
+def test_breadth_first():
+    one = Node(1)
+    three = Node(3)
+    four = Node(4)
+    bt = BinaryTree(one)
+    one.left = four
+    one.right = three
+
+    assert one.left == bt.root.left
+    assert one.right == three
+    breadth = breadth_first(bt)
+    assert breadth == [1,4,3]
+
 
 
 
