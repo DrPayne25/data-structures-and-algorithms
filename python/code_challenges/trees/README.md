@@ -58,3 +58,25 @@ then return the current z dictionary value
 # Credits:
 Brandon, Eddie, Connor, Michael, Roger, GeekForGeeks
 
+# Tree Breadth First
+<!-- Short summary or background information -->
+we are creating a new module called tree_breadth_first which will take in a tree and then give a list of the values in the order they were encountered
+
+## Challenge
+<!-- Description of the challenge -->
+create a function called breadth_first that will return a list of the values in the order they were encountered
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O:
+Time: O(n)
+Space: O(w) w = width of the tree
+
+## API
+<!-- Description of each method publicly available in each of your trees -->
+breadth_first: takes a tree as an input then it will instantiate an empty list and a new queue then it will check if the tree.root is None if so it will return the list then it will enqueue the current tree.root into the queue the while the queue is not empty it will then have a new variable deqeueu set to the dequeue function for a queue which we will use to append all the values into our list created above  it will then do this for bot the left and right side of the list then finally return the list
+
+
+# Credits:
+Brandon, Eddie, Connor, Michael, Roger, GeekForGeeks
+
