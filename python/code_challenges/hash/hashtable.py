@@ -8,9 +8,8 @@ class Hashtable:
         sum = 0
         for char in key:
             sum += ord(char)
-        primed = sum * 97
-        index = primed % self.size
-        return index
+        primed = sum * 521
+        return  primed % self.size
     def set(self, key, value):
         # Arguments: key, value
         # Returns: nothing
@@ -24,8 +23,10 @@ class Hashtable:
                self.buckets[index][i] = (key, value)
                key_found = True
                break
-           if not key_found:
-               self.buckets[index].append((key,value))
+
+       if not key_found:
+           self.buckets[index].append((key,value))
+
     def get(self, key):
         # Arguments: key
         # Returns: Value associated with that key in the table
@@ -40,9 +41,13 @@ class Hashtable:
         for record in self.buckets[index]:
             if record[0] == key:
                 return True
+        return False
     def keys(self):
         # Returns: Collection of keys
-        pass
+        for record in self.buckets:
+            return print(record)
+        # return print(self.buckets)
+
 
 if __name__ == '__main__':
     table = Hashtable()
