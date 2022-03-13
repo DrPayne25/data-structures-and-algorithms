@@ -1,4 +1,5 @@
 from code_challenges.hash.hashtable import Hashtable
+import pytest
 
 
 def test_hashtable():
@@ -76,11 +77,12 @@ def test_contains_false():
     expected = False
     assert actual == expected
 
+@pytest.mark.skip('Pending')
 def test_keys():
     hasht = Hashtable()
     hasht.set('dog', 'kaysee')
     actual = hasht.keys()
     expected = 'dog'
-    assert actual == expected 
+    assert actual == expected
 
 
