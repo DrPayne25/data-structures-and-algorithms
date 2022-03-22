@@ -66,3 +66,34 @@ Brandon, Eddie, Connor, and Roger
 
 Challenge 31: ![hashmap_repeated_whiteboard](code_challenges/Whiteboards/../../../Whiteboards/hashmap_repeated_word.png)
 
+# HashMap Left Join
+<!-- Short summary or background information -->
+Implement a simplified LEFT JOIN for 2 Hashmaps into a single data structure.
+
+## Challenge
+<!-- Description of the challenge -->
+Combine two hashmaps to one data structure with the left one being the primary one
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+Big O
+Space: O(1)
+Time: O(n)
+
+## API
+<!-- Description of each method publicly available to your Stack and Queue-->
+hash_left_join will take in two arguments that should be two hashmaps we will call them left_hash and right_hash in this function
+we will then make an empty list called combined_hash
+then we will traverse through the left_hash and append the key and value from the left_hash into the combined_hash list
+
+then it will check if the key is in the right_hash and if it is it will append that value from the right hash into the combined_hash list
+if that is is not in the right_hash it will append none it will then return that combined_hash list
+
+
+Credits:
+Brandon, Eddie, Connor, and Roger
+
+Challenge 32: ![hashmap_left_join](code_challenges/Whiteboards/../../../Whiteboards/whiteboard_hashmap_left_join.png)
+
