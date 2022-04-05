@@ -1,3 +1,5 @@
+from code_challenges.stack_and_queue.queues import Queue
+
 class Graph:
 
     def __init__(self):
@@ -35,6 +37,23 @@ class Graph:
         return len(self.adjacency_list)
             # Arguments: none
             # Returns the total number of nodes in the graph
+
+    def breadthfirst(vertex):
+        nodes = list()
+        breadth = Queue()
+        visited = set()
+        breadth.enqueue(vertex)
+        visited.add(vertex)
+        while breadth:
+            front = breadth.dequeue()
+            nodes.append(front)
+            for child in nodes:
+                if child not in visited:
+                    visited.add(child)
+                    breadth.enqueue(child)
+        return nodes
+
+
 
 
 class Vertex:
