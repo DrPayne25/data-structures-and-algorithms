@@ -38,7 +38,7 @@ class Graph:
             # Arguments: none
             # Returns the total number of nodes in the graph
 
-    def breadthfirst(vertex):
+    def breadthfirst(self, vertex):
         nodes = list()
         breadth = Queue()
         visited = set()

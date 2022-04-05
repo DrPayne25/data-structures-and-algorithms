@@ -99,7 +99,7 @@ def test_breadth_first():
     g.add_edge(v1,v5)
     g.add_edge(v1,v3)
     g.add_edge(v3,v5)
-    
+
     expected = g.breadthfirst(v1)
     actual = ['a', 'b', 'd', 'e', 'c']
     assert actual == expected
